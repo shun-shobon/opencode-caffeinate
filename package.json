@@ -17,13 +17,17 @@
 		"LICENSE"
 	],
 	"scripts": {
+		"changeset": "changeset",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
-		"typecheck": "tsc --noEmit"
+		"release": "changeset publish",
+		"typecheck": "tsc --noEmit",
+		"version-package": "changeset version && bun run format"
 	},
 	"devDependencies": {
+		"@changesets/cli": "2.29.8",
 		"@opencode-ai/plugin": "1.1.13",
 		"@shun-shobon/style-guide": "2.1.0",
 		"@types/bun": "1.3.5",

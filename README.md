@@ -24,8 +24,3 @@ OpenCode installs npm plugins automatically on startup using Bun.
 
 - Starts `caffeinate` when a session becomes busy or retrying.
 - Stops `caffeinate` when the session becomes idle.
-
-## OpenCode plugin notes
-
-- Local plugins can be placed in `.opencode/plugin/` or `~/.config/opencode/plugin/`.
-- npm plugins are cached in `~/.cache/opencode/node_modules/`.

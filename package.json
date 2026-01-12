@@ -20,16 +20,15 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
-	},
-	"peerDependencies": {
-		"typescript": "5.9.3"
+		"lint:fix": "eslint . --fix",
+		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@opencode-ai/plugin": "1.1.13",
 		"@shun-shobon/style-guide": "2.1.0",
 		"@types/bun": "1.3.5",
 		"eslint": "9.39.2",
-		"prettier": "3.7.4"
+		"prettier": "3.7.4",
+		"typescript": "5.9.3"
 	}
 }

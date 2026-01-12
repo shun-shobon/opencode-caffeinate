@@ -1,0 +1,22 @@
+name: "Setup Bun development environment"
+description: "Setup Bun development environment for GitHub Actions"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup | Bun
+      uses: oven-sh/setup-bun@b7a1c7ccf290d58743029c4f6903da283811b979 # v2.1.0
+      with:
+        bun-version-file: .tool-versions
+
+    - name: Setup | Cache
+      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+      with:
+        path: ~/.bun/install/cache
+        key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+        restore-keys: |
+          ${{ runner.os }}-bun-
+
+    - name: Setup | Install dependencies
+      shell: bash
+      run: bun install --frozen-lockfile

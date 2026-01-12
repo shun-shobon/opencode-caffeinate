@@ -1,0 +1,53 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Setup | Bun
+        uses: ./.github/actions/setup-bun
+
+      - name: Run | Lint
+        run: bun run lint --max-warnings 0
+
+  format:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Setup | Bun
+        uses: ./.github/actions/setup-bun
+
+      - name: Run | Format
+        run: bun run format:check
+
+  typecheck:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Setup | Bun
+        uses: ./.github/actions/setup-bun
+
+      - name: Run | Typecheck
+        run: bun run typecheck

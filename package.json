@@ -11,6 +11,11 @@
 	"author": "NISHIZAWA Shuntaro <me@s2n.tech> (https://s2n.tech/)",
 	"license": "MIT",
 	"module": "src/index.ts",
+	"files": [
+		"src",
+		"README.md",
+		"LICENSE"
+	],
 	"scripts": {
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",

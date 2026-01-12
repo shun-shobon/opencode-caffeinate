@@ -1,5 +1,11 @@
 # @shun-shobon/opencode-caffeinate
 
+## 0.1.1
+
+### Patch Changes
+
+- 4433475: Add a Node.js setup step to the Changeset workflow.
+
 ## 0.1.0
 
 ### Minor Changes

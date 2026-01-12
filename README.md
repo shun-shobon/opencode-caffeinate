@@ -1,15 +1,31 @@
 # opencode-caffeinate
 
-To install dependencies:
+An OpenCode plugin that runs `caffeinate -i` while OpenCode is busy, keeping macOS awake during active sessions.
 
-```bash
-bun install
+## Requirements
+
+- macOS (uses the built-in `caffeinate` command)
+- OpenCode
+
+## Install
+
+Add the plugin to your `opencode.json`:
+
+```json
+{
+	"$schema": "https://opencode.ai/config.json",
+	"plugin": ["@shun-shobon/opencode-caffeinate"]
+}
 ```
 
-To run:
+OpenCode installs npm plugins automatically on startup using Bun.
 
-```bash
-bun run index.ts
-```
+## Behavior
 
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+- Starts `caffeinate` when a session becomes busy or retrying.
+- Stops `caffeinate` when the session becomes idle.
+
+## OpenCode plugin notes
+
+- Local plugins can be placed in `.opencode/plugin/` or `~/.config/opencode/plugin/`.
+- npm plugins are cached in `~/.cache/opencode/node_modules/`.

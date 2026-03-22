@@ -30,7 +30,7 @@
 		"@changesets/cli": "2.30.0",
 		"@opencode-ai/plugin": "1.2.27",
 		"@shun-shobon/style-guide": "2.2.4",
-		"@types/bun": "1.3.10",
+		"@types/bun": "1.3.11",
 		"eslint": "9.39.4",
 		"prettier": "3.8.1",
 		"typescript": "5.9.3"
